@@ -1,0 +1,2 @@
+C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Assigments\Expression_Evaluator\ExpressionEvaluator\x64\Debug\ExpressionEvaluator.exe
+C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Assigments\Expression_Evaluator\ExpressionEvaluator\x64\Debug\ExpressionEvaluator.pdb
