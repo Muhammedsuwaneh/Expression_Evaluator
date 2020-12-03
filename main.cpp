@@ -32,8 +32,9 @@ int main() {
         grade += Test5();
     } //end-if*/
 
-    printf("------------------------------------------------------\n");
-    printf("Final grade: %d\n" + grade);
+    printf("\n------------------------------------------------------\n");
+    printf("Final grade: %d\n", grade);
+    printf("\n\n");
 } //end-main
 
 
@@ -43,15 +44,16 @@ int main() {
 int Test1() {
     // infixExpr: 3500 - ((43*12) + (47/2));    
     // Let the C++ compiler do the evaluation :-)
-    int expressionValue = 3500 - ((43 * 12) + (47 / 2));
+    //int expressionValue = 3500 - ((43 * 12) + (47 / 2));
+
+    //// postfix: 3500 43 12 * 47 2 / + -
+    //string postfixExpr = "3500 43 12 * 47 2 / + -";
+    //int result = EvaluatePostfixExpression(postfixExpr);
+    //if (result != expressionValue) return 0;
 
     string infixExpr = "3500 - ((43 * 12) + (47 / 2))";
     string postfixExpr = Infix2Postfix(infixExpr);
     cout << postfixExpr;
-    // postfix: 3500 43 12 * 47 2 / + -
-    //string postfixExpr = "3500 43 12 * 47 2 / + -";
-   // int result = EvaluatePostfixExpression(postfixExpr);
-   // if (result != expressionValue) return 0;
 
     return 20;
 } //end-Test1

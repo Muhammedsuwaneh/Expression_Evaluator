@@ -1,3 +1,2 @@
-﻿  Expression.cpp
-C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Assigments\Expression_Evaluator\ExpressionEvaluator\Expression.cpp(23,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  main.cpp
   ExpressionEvaluator.vcxproj -> C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Assigments\Expression_Evaluator\ExpressionEvaluator\x64\Debug\ExpressionEvaluator.exe
