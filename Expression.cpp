@@ -49,7 +49,7 @@ string Infix2Postfix(string &s) {
 
 			while (infix[i] != '/' && infix[i] != '*' &&
 				infix[i] != '+' && infix[i] != '-' &&
-				infix[i] != '(' && infix[i] != ')') {
+				infix[i] != '(' && infix[i] != ')' && i < len2) {
 
 				buff += infix[i];
 				i++;
@@ -73,7 +73,7 @@ string Infix2Postfix(string &s) {
 			
 			if (stk.top() == "/") {
 
-				while (stk.top() != "+" && stk.top() != "-" && stk.top() != "(" && stk.top() != ")") {
+				while (stk.top() != "+" && stk.top() != "-" && stk.top() != "(" && stk.top() != ")" && stk.top() != " ") {
 
 					output.push_back(stk.top());
 					stk.pop();
@@ -89,11 +89,13 @@ string Infix2Postfix(string &s) {
 			
 			if (stk.top() == "/" || stk.top() == "*"|| stk.top() == "+") {
 
-				while (stk.top() != "-" && stk.top() != "(" && stk.top() != ")") {
+				while (stk.top() != "-" && stk.top() != "(" && stk.top() != ")" && stk.top() != " ") {
 
 					output.push_back(stk.top());
 					stk.pop();
 				}
+
+				stk.push("+");
 			}
 
 			else
@@ -105,11 +107,13 @@ string Infix2Postfix(string &s) {
 			
 			if (stk.top() == "/" || stk.top() == "*" || stk.top() == "+" || stk.top() == "-") {
 
-				while (stk.top() != "(" && stk.top() != ")") {
+				while (stk.top() != "(" && stk.top() != ")" && stk.top() != " ") {
 
 					output.push_back(stk.top());
 					stk.pop();
 				}
+
+				stk.push("-");
 			}
 
 			else
@@ -127,7 +131,9 @@ string Infix2Postfix(string &s) {
 
 			while (1) {
 
-				if (stk.top() != "(") {
+				if (stk.top() == " ") break;
+
+				else if (stk.top() != "(") {
 
 					output.push_back(stk.top());
 					stk.pop();
@@ -137,11 +143,20 @@ string Infix2Postfix(string &s) {
 
 					stk.pop();
 
-					if(stk.top() == "(")
+					if (stk.top() == "(")
 						stk.pop();
 
 					break;
 				}
+			}
+		}
+
+		else if (i == len2 && (stk.top() == "+" || stk.top() == "-" || stk.top() == "/" || stk.top() == "*")) {
+
+			while (stk.top() != " ") {
+
+				output.push_back(stk.top());
+				stk.pop();
 			}
 		}
 
